@@ -15,7 +15,6 @@ public class Estilo implements FocusListener, MouseListener {
     private final Font primaryFont = new Font("Roboto", Font.PLAIN, 16);
     private final Font primaryFontBold = new Font("Roboto", Font.BOLD, 16);
     private final Font secondaryFont = new Font("Roboto", Font.BOLD, 13);
-    private JFrame jFrame;
 
     //Styling Method JFrame
     public void frameEstilo(JFrame jFrame, String title, int exitMode, int[] bound){
@@ -25,16 +24,20 @@ public class Estilo implements FocusListener, MouseListener {
         jFrame.setLayout(null);
         jFrame.setDefaultCloseOperation(exitMode);
         jFrame.setLocationRelativeTo(null);
-        this.jFrame = jFrame;
+    }
+
+    //Styling Method JPanel
+    public void panelEstilo(JPanel jPanel){
+        jPanel.setLayout(null);
     }
 
     //Styling Method JLabel
-    public void labelEstilo(JLabel jLabel, int[] bound, String text){
+    public void labelEstilo(JLabel jLabel, int[] bound, String text, JPanel jPanel){
         jLabel.setBounds(bound[0], bound[1], bound[2], bound[3]);
         jLabel.setText(text);
         jLabel.setForeground(this.black);
         jLabel.setFont(this.secondaryFont);
-        jFrame.add(jLabel);
+        jPanel.add(jLabel);
     }
 
     //Styling Methods JTextField
@@ -50,14 +53,14 @@ public class Estilo implements FocusListener, MouseListener {
         jTextField.setForeground(this.greyDark);
     }
 
-    public void textFieldEstilo(JTextField jTextField, int[] bound){
+    public void textFieldEstilo(JTextField jTextField, int[] bound, JPanel jPanel){
         jTextField.setBounds(bound[0], bound[1], bound[2], bound[3]);
         jTextField.setFont(this.primaryFont);
         jTextField.setForeground(this.black);
         inactivoTextFieldEstilo(jTextField);
         jTextField.setText(jTextField.getName());
         jTextField.addFocusListener(this);
-        jFrame.add(jTextField);
+        jPanel.add(jTextField);
     }
 
     //Styling Methods JButton
@@ -73,14 +76,14 @@ public class Estilo implements FocusListener, MouseListener {
         jButton.setForeground(this.greyDark);
     }
 
-    public void buttonEstilo(JButton jButton, int[] bound, String text){
+    public void buttonEstilo(JButton jButton, int[] bound, String text, JPanel jPanel){
         jButton.setBounds(bound[0], bound[1], bound[2], bound[3]);
         jButton.setText(text);
         jButton.setFocusable(false);
         jButton.setFont(this.primaryFontBold);
         inactivoButtonEstilo(jButton);
         jButton.addMouseListener(this);
-        jFrame.add(jButton);
+        jPanel.add(jButton);
     }
 
     //Focus Events

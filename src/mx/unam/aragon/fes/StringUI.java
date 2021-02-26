@@ -43,4 +43,6 @@ public class StringUI {
     public static final String DELEGACION_EJEMPLO = "Venustiano Carranza";
     public static final String ESTADO_EJEMPLO = "Ciudad de Mexico";
     public static final String CP_EJEMPLO = "34123";
+    public static final String TAB_REGISTRO_USUARIO = "Registro Empleado";
+    public static final String TAB_EMPRESA_DATOS = "Empresa";
 }

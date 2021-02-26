@@ -1,109 +1,127 @@
-package mx.unam.aragon.fes;
+package mx.unam.aragon.fes.gui;
+
+import mx.unam.aragon.fes.Estilo;
+import mx.unam.aragon.fes.StringUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Ventana implements ActionListener {
+public class AltaEmpleado implements ActionListener {
     private final Estilo estilo = new Estilo();
     private JTextField nombreTextField, paternoTextField, maternoTextField, edadTextField, curpTextField;
     private JTextField calleTextField, numeroTextField, coloniaTextField, delegacionTextField, estadoTextField, cpTextField;
+    private final JFrame jFrame;
 
-    public Ventana(){
-        JFrame jframe = new JFrame();
-        estilo.frameEstilo(jframe, StringUI.TITULO_VENTANA, WindowConstants.EXIT_ON_CLOSE, new int[]{1, 2, 470, 600});
+    public AltaEmpleado(){
+        jFrame = new JFrame();
+        estilo.frameEstilo(jFrame, StringUI.TITULO_VENTANA, WindowConstants.EXIT_ON_CLOSE, new int[]{1, 2, 470, 600});
         construirUI();
-        jframe.setVisible(true);
+        jFrame.setVisible(true);
     }
 
     private void construirUI(){
+        JTabbedPane jTabbedPane = new JTabbedPane();
+        jTabbedPane.setBounds(0, 10, 470, 570);
+
+        //JPanel RegistroUsuario
+        JPanel registrarUsuario = new JPanel();
+        estilo.panelEstilo(registrarUsuario);
+        JPanel registroEmpleado = new JPanel();
+        estilo.panelEstilo(registroEmpleado);
+
         //JLabel section Persona class
-        estilo.labelEstilo(new JLabel(), new int[]{20, 40, 100, 30}, StringUI.NOMBRE_LABEL_TEXT);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 10, 100, 30}, StringUI.NOMBRE_LABEL_TEXT, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{20, 110, 150, 30}, StringUI.APELLIDO_PATERNO_LABEL_TEXT);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 80, 150, 30}, StringUI.APELLIDO_PATERNO_LABEL_TEXT, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{240, 110, 150, 30}, StringUI.APELLIDO_MATERNO_LABEL_TEXT);
+        estilo.labelEstilo(new JLabel(), new int[]{240, 80, 150, 30}, StringUI.APELLIDO_MATERNO_LABEL_TEXT, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{20, 180, 100, 30}, StringUI.EDAD_LABEL_TEXT);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 150, 100, 30}, StringUI.EDAD_LABEL_TEXT, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{240, 180, 100, 30}, StringUI.CURP_LABEL_TEXT);
+        estilo.labelEstilo(new JLabel(), new int[]{240, 150, 100, 30}, StringUI.CURP_LABEL_TEXT, registrarUsuario);
 
         //JTextField section Persona class
         nombreTextField = new JTextField();
         nombreTextField.addActionListener(this);
         nombreTextField.setName(StringUI.NOMBRE_EJEMPLO);
-        estilo.textFieldEstilo(nombreTextField, new int[]{20, 70, 420, 30});
+        estilo.textFieldEstilo(nombreTextField, new int[]{20, 40, 420, 30}, registrarUsuario);
 
         paternoTextField = new JTextField();
         paternoTextField.addActionListener(this);
         paternoTextField.setName(StringUI.PATERNO_EJEMPLO);
-        estilo.textFieldEstilo(paternoTextField, new int[]{20, 140, 200, 30});
+        estilo.textFieldEstilo(paternoTextField, new int[]{20, 110, 200, 30}, registrarUsuario);
 
         maternoTextField = new JTextField();
         maternoTextField.addActionListener(this);
         maternoTextField.setName(StringUI.MATERNO_EJEMPLO);
-        estilo.textFieldEstilo(maternoTextField, new int[]{240, 140, 200, 30});
+        estilo.textFieldEstilo(maternoTextField, new int[]{240, 110, 200, 30}, registrarUsuario);
 
         edadTextField = new JTextField();
         edadTextField.addActionListener(this);
         edadTextField.setName(StringUI.EDAD_EJEMPLO);
-        estilo.textFieldEstilo(edadTextField, new int[]{20, 210, 200, 30});
+        estilo.textFieldEstilo(edadTextField, new int[]{20, 180, 200, 30}, registrarUsuario);
 
         curpTextField = new JTextField();
         curpTextField.addActionListener(this);
         curpTextField.setName(StringUI.CURP_EJEMPLO);
-        estilo.textFieldEstilo(curpTextField, new int[]{240, 210, 200, 30});
+        estilo.textFieldEstilo(curpTextField, new int[]{240, 180, 200, 30}, registrarUsuario);
 
         //JLabel section Direccion class
-        estilo.labelEstilo(new JLabel(), new int[]{20, 250, 150, 30}, StringUI.DIRECCION_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 220, 150, 30}, StringUI.DIRECCION_LABEL, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{20, 280, 150, 30}, StringUI.CALLE_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 250, 150, 30}, StringUI.CALLE_LABEL, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{240, 280, 150, 30}, StringUI.NUMERO_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{240, 250, 150, 30}, StringUI.NUMERO_LABEL, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{20, 350, 150, 30}, StringUI.COLONIA_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 320, 150, 30}, StringUI.COLONIA_LABEL, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{240, 350, 150, 30}, StringUI.DELEGACION_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{240, 320, 150, 30}, StringUI.DELEGACION_LABEL, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{20, 420, 150, 30}, StringUI.ESTADO_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{20, 390, 150, 30}, StringUI.ESTADO_LABEL, registrarUsuario);
 
-        estilo.labelEstilo(new JLabel(), new int[]{240, 420, 150, 30}, StringUI.CP_LABEL);
+        estilo.labelEstilo(new JLabel(), new int[]{240, 390, 150, 30}, StringUI.CP_LABEL, registrarUsuario);
 
         //JTextField section direccion class
         calleTextField = new JTextField();
         calleTextField.addActionListener(this);
         calleTextField.setName(StringUI.CALLE_EJEMPLO);
-        estilo.textFieldEstilo(calleTextField, new int[]{20, 310, 200, 30});
+        estilo.textFieldEstilo(calleTextField, new int[]{20, 280, 200, 30}, registrarUsuario);
 
         numeroTextField = new JTextField();
         numeroTextField.addActionListener(this);
         numeroTextField.setName(StringUI.NUMERO_EJEMPLO);
-        estilo.textFieldEstilo(numeroTextField, new int[]{240, 310, 200, 30});
+        estilo.textFieldEstilo(numeroTextField, new int[]{240, 280, 200, 30}, registrarUsuario);
 
         coloniaTextField = new JTextField();
         coloniaTextField.addActionListener(this);
         coloniaTextField.setName(StringUI.COLONIA_EJEMPLO);
-        estilo.textFieldEstilo(coloniaTextField, new int[]{20, 380, 200, 30});
+        estilo.textFieldEstilo(coloniaTextField, new int[]{20, 350, 200, 30}, registrarUsuario);
 
         delegacionTextField = new JTextField();
         delegacionTextField.addActionListener(this);
         delegacionTextField.setName(StringUI.DELEGACION_EJEMPLO);
-        estilo.textFieldEstilo(delegacionTextField, new int[]{240, 380, 200, 30});
+        estilo.textFieldEstilo(delegacionTextField, new int[]{240, 350, 200, 30}, registrarUsuario);
 
         estadoTextField = new JTextField();
         estadoTextField.addActionListener(this);
         estadoTextField.setName(StringUI.ESTADO_EJEMPLO);
-        estilo.textFieldEstilo(estadoTextField, new int[]{20, 450, 200, 30});
+        estilo.textFieldEstilo(estadoTextField, new int[]{20, 420, 200, 30}, registrarUsuario);
 
         cpTextField = new JTextField();
         cpTextField.addActionListener(this);
         cpTextField.setName(StringUI.CP_EJEMPLO);
-        estilo.textFieldEstilo(cpTextField, new int[]{240, 450, 200, 30});
+        estilo.textFieldEstilo(cpTextField, new int[]{240, 420, 200, 30}, registrarUsuario);
 
         //Save button
         JButton guardarButton = new JButton();
         guardarButton.addActionListener(this);
-        estilo.buttonEstilo(guardarButton, new int[]{80, 500, 300, 40}, StringUI.GUARDAR_BUTTON);
+        estilo.buttonEstilo(guardarButton, new int[]{80, 470, 300, 40}, StringUI.GUARDAR_BUTTON, registrarUsuario);
+
+        jTabbedPane.add(StringUI.TAB_REGISTRO_USUARIO, registrarUsuario);
+        jTabbedPane.add(StringUI.TAB_EMPRESA_DATOS, registroEmpleado);
+
+        jFrame.add(jTabbedPane);
     }
 
     @Override
