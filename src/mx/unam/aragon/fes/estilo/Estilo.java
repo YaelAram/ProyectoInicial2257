@@ -1,4 +1,4 @@
-package mx.unam.aragon.fes;
+package mx.unam.aragon.fes.estilo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +29,7 @@ public class Estilo implements FocusListener, MouseListener {
     //Styling Method JPanel
     public void panelEstilo(JPanel jPanel){
         jPanel.setLayout(null);
+        jPanel.setBackground(this.greyLight);
     }
 
     //Styling Method JLabel

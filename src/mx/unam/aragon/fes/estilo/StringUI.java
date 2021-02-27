@@ -1,4 +1,4 @@
-package mx.unam.aragon.fes;
+package mx.unam.aragon.fes.estilo;
 
 public class StringUI {
     public static final String TITULO_VENTANA = "Gestión de Usuario";
@@ -14,7 +14,6 @@ public class StringUI {
     public static final String DELEGACION_LABEL = "Delegacion:";
     public static final String ESTADO_LABEL = "Estado:";
     public static final String CP_LABEL = "C.P.:";
-    public static final String GUARDAR_BUTTON = "Guardar Usuario";
     public static final String NOMBRE_CAMPO_VACIO = "El campo nombre esta vacio.";
     public static final String PATERNO_CAMPO_VACIO = "El campo apellido paterno esta vacio.";
     public static final String MATERNO_CAMPO_VACIO = "El campo apellido materno esta vacio.";
@@ -43,6 +42,26 @@ public class StringUI {
     public static final String DELEGACION_EJEMPLO = "Venustiano Carranza";
     public static final String ESTADO_EJEMPLO = "Ciudad de Mexico";
     public static final String CP_EJEMPLO = "34123";
-    public static final String TAB_REGISTRO_USUARIO = "Registro Empleado";
+
+    public static final String GUARDAR_BUTTON = "Guardar Usuario";
+    public static final String CARGAR_BUTTON = "Cargar Usuario";
+
+    public static final String TAB_REGISTRO_USUARIO = "Personal";
     public static final String TAB_EMPRESA_DATOS = "Empresa";
+
+    public static final String NUMERO_EMPLEADO_LABEL = "Numero empleado:";
+    public static final String DEPARTAMENTO_LABEL = "Departamento:";
+    public static final String SUELDO_LABEL = "Sueldo (MXN):";
+    public static final String HORAS_EXTRA_LABEL = "Horas extra:";
+    public static final String NUMERO_EMPLEADO_CAMPO_VACIO = "El campo numero empleado esta vacio";
+    public static final String DEPARTAMENTO_CAMPO_VACIO = "El campo departamento esta vacio";
+    public static final String SUELDO_CAMPO_VACIO = "El campo sueldo esta vacio";
+    public static final String HORAS_EXTRA_CAMPO_VACIO = "El campo horas extra esta vacio";
+    public static final String NUMERO_EMPLEADO_RANGO_CORRECTO = "El numero de empleado no puede ser un numero negativo.";
+    public static final String SUELDO_RANGO_CORRECTO = "El sueldo no puede ser un numero negativo.";
+    public static final String HORAS_EXTRA_RANGO_CORRECTO = "No se puede trabajar horas negativas";
+    public static final String NUMERO_EMPLEADO_EJEMPLO = "12345";
+    public static final String DEPARTAMENTO_EJEMPLO = "Contabilidad";
+    public static final String SUELDO_EJEMPLO = "1000";
+    public static final String HORAS_EXTRA_EJEMPLO = "5";
 }
