@@ -115,7 +115,6 @@ public class RegistroEmpleado extends JPanel implements ActionListener {
         if(actionEvent.getSource() == guardarButton){
             if(verificarCamposNoVacios())
                 if(verificarCamposSonCorrectos()){
-                    vaciarCampos();
                     Conector.getEmpleado().setNombre(nombreTextField.getText());
                     Conector.getEmpleado().setApellidoPaterno(paternoTextField.getText());
                     Conector.getEmpleado().setApellidoMaterno(maternoTextField.getText());
@@ -124,6 +123,8 @@ public class RegistroEmpleado extends JPanel implements ActionListener {
 
                     Direccion direccion = new Direccion(calleTextField.getText(), numeroTextField.getText(), coloniaTextField.getText(), delegacionTextField.getText(), estadoTextField.getText(), cpTextField.getText());
                     Conector.getEmpleado().setDireccion(direccion);
+
+                    vaciarCampos();
                 }
         }
         else if(actionEvent.getSource() == nuevoUsuario)

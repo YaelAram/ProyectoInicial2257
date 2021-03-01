@@ -76,6 +76,7 @@ public class Empresarial extends JPanel implements ActionListener {
                         Conector.getEmpleado().setNumeroEmpleado(Integer.parseInt(numeroEmpleadoTextField.getText()));
                         Conector.getEmpleado().setSueldo(Double.parseDouble(sueldoTextField.getText()));
 
+                        vaciarCampos();
                         System.out.println(Conector.getEmpleado().toString());
                     }
             }
