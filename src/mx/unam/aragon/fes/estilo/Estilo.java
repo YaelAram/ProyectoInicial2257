@@ -91,10 +91,7 @@ public class Estilo implements FocusListener, MouseListener {
     @Override
     public void focusGained(FocusEvent focusEvent) {
         try{
-            JTextField jTextField = (JTextField) focusEvent.getSource();
-            activoTextFieldEstilo(jTextField);
-            if(jTextField.getName().equals(jTextField.getText()))
-                jTextField.setText("");
+            activoTextFieldEstilo((JTextField) focusEvent.getSource());
         }
         catch (Exception error){
             System.out.println(error.getMessage());
@@ -105,10 +102,7 @@ public class Estilo implements FocusListener, MouseListener {
     @Override
     public void focusLost(FocusEvent focusEvent) {
         try{
-            JTextField jTextField = (JTextField) focusEvent.getSource();
-            inactivoTextFieldEstilo(jTextField);
-            if(jTextField.getText().isEmpty())
-                jTextField.setText(jTextField.getName());
+            inactivoTextFieldEstilo((JTextField) focusEvent.getSource());
         }
         catch (Exception error){
             System.out.println(error.getMessage());

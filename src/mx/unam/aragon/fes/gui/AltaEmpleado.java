@@ -18,7 +18,7 @@ public class AltaEmpleado {
 
     private void construirUI(){
         JTabbedPane jTabbedPane = new JTabbedPane();
-        jTabbedPane.setBounds(0, 10, 470, 570);
+        jTabbedPane.setBounds(0, 10, 475, 570);
 
         jTabbedPane.add(StringUI.TAB_REGISTRO_USUARIO, new RegistroEmpleado());
         jTabbedPane.add(StringUI.TAB_EMPRESA_DATOS, new Empresarial());

@@ -8,6 +8,7 @@ public class Persona {
     private String curp;
 
     public Persona() {
+
     }
 
     public Persona(String nombre, String apellidoPaterno, String apellidoMaterno, int edad, String curp) {
@@ -67,5 +68,9 @@ public class Persona {
                 ", edad=" + edad + '\n' +
                 ", curp='" + curp + '\n' +
                 '}';
+    }
+
+    public boolean PersonaNoVacio(){
+        return this.nombre != null && this.apellidoPaterno != null && this.apellidoMaterno != null && this.curp != null;
     }
 }

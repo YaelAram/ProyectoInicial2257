@@ -31,20 +31,11 @@ public class StringUI {
     public static final String NUMERO_ES_NUMERO = "El campo numero debe ser un numero";
     public static final String NUMERO_RANGO_CORRECTO = "El campo numero debe ser un numero mayor a 0.";
     public static final String CP_LONGITUD_CORRECTA = "El campo C.P. debe tener una longitud de 5.";
-    public static final String NOMBRE_EJEMPLO = "Yael Aram";
-    public static final String PATERNO_EJEMPLO = "Castillo";
-    public static final String MATERNO_EJEMPLO = "Sanchez";
-    public static final String EDAD_EJEMPLO = "21";
-    public static final String CURP_EJEMPLO = "ASDA234567HDFSNLA4";
-    public static final String CALLE_EJEMPLO = "Revolucion";
-    public static final String NUMERO_EJEMPLO = "234";
-    public static final String COLONIA_EJEMPLO = "Doctores";
-    public static final String DELEGACION_EJEMPLO = "Venustiano Carranza";
-    public static final String ESTADO_EJEMPLO = "Ciudad de Mexico";
-    public static final String CP_EJEMPLO = "34123";
 
-    public static final String GUARDAR_BUTTON = "Guardar Usuario";
-    public static final String CARGAR_BUTTON = "Cargar Usuario";
+    public static final String GUARDAR_BUTTON = "Guardar";
+    public static final String CARGAR_BUTTON = "Cargar";
+    public static final String NUEVO_BUTTON = "Nuevo";
+    public static final String ENVIAR_BUTTON = "Enviar";
 
     public static final String TAB_REGISTRO_USUARIO = "Personal";
     public static final String TAB_EMPRESA_DATOS = "Empresa";
@@ -60,8 +51,4 @@ public class StringUI {
     public static final String NUMERO_EMPLEADO_RANGO_CORRECTO = "El numero de empleado no puede ser un numero negativo.";
     public static final String SUELDO_RANGO_CORRECTO = "El sueldo no puede ser un numero negativo.";
     public static final String HORAS_EXTRA_RANGO_CORRECTO = "No se puede trabajar horas negativas";
-    public static final String NUMERO_EMPLEADO_EJEMPLO = "12345";
-    public static final String DEPARTAMENTO_EJEMPLO = "Contabilidad";
-    public static final String SUELDO_EJEMPLO = "1000";
-    public static final String HORAS_EXTRA_EJEMPLO = "5";
 }

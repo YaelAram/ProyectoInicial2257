@@ -1,5 +1,6 @@
 package mx.unam.aragon.fes.gui;
 
+import mx.unam.aragon.fes.conector.Conector;
 import mx.unam.aragon.fes.estilo.Estilo;
 import mx.unam.aragon.fes.estilo.StringUI;
 
@@ -10,7 +11,7 @@ import java.awt.event.ActionListener;
 public class Empresarial extends JPanel implements ActionListener {
     private final Estilo estilo = new Estilo();
     private JTextField numeroEmpleadoTextField, departamentoTextField, sueldoTextField, horasExtraTextField;
-    private JButton guardarButton;
+    private JButton guardarButton, cargarButton, siguienteUsuario, anteriorUsuario, nuevoUsuario, enviarUsuario;
 
     public Empresarial(){
         estilo.panelEstilo(this);
@@ -26,29 +27,42 @@ public class Empresarial extends JPanel implements ActionListener {
 
         //JTextField section Empleado class
         numeroEmpleadoTextField = new JTextField();
-        numeroEmpleadoTextField.setName(StringUI.NUMERO_EMPLEADO_EJEMPLO);
         estilo.textFieldEstilo(numeroEmpleadoTextField, new int[]{20, 40, 420, 30}, this);
 
         departamentoTextField = new JTextField();
-        departamentoTextField.setName(StringUI.DEPARTAMENTO_EJEMPLO);
         estilo.textFieldEstilo(departamentoTextField, new int[]{20, 110, 420, 30}, this);
 
         sueldoTextField = new JTextField();
-        sueldoTextField.setName(StringUI.SUELDO_EJEMPLO);
         estilo.textFieldEstilo(sueldoTextField, new int[]{20, 180, 420, 30}, this);
 
         horasExtraTextField = new JTextField();
-        horasExtraTextField.setName(StringUI.HORAS_EXTRA_EJEMPLO);
         estilo.textFieldEstilo(horasExtraTextField, new int[]{20, 250, 420, 30}, this);
 
         //JButton section
+        nuevoUsuario = new JButton();
+        nuevoUsuario.addActionListener(this);
+        estilo.buttonEstilo(nuevoUsuario, new int[]{15, 470, 70, 40}, StringUI.NUEVO_BUTTON, this);
+
+        enviarUsuario = new JButton();
+        enviarUsuario.addActionListener(this);
+        enviarUsuario.setEnabled(false);
+        estilo.buttonEstilo(enviarUsuario, new int[]{95, 470, 70, 40}, StringUI.ENVIAR_BUTTON, this);
+
+        anteriorUsuario = new JButton();
+        anteriorUsuario.addActionListener(this);
+        estilo.buttonEstilo(anteriorUsuario, new int[]{175, 470, 50, 40}, "<-", this);
+
+        siguienteUsuario = new JButton();
+        siguienteUsuario.addActionListener(this);
+        estilo.buttonEstilo(siguienteUsuario, new int[]{235, 470, 50, 40}, "->", this);
+
         guardarButton = new JButton();
         guardarButton.addActionListener(this);
-        estilo.buttonEstilo(guardarButton, new int[]{20, 470, 200, 40}, StringUI.GUARDAR_BUTTON, this);
+        estilo.buttonEstilo(guardarButton, new int[]{295, 470, 70, 40}, StringUI.GUARDAR_BUTTON, this);
 
-        JButton cargarButton = new JButton();
+        cargarButton = new JButton();
         cargarButton.addActionListener(this);
-        estilo.buttonEstilo(cargarButton, new int[]{230, 470, 200, 40}, StringUI.CARGAR_BUTTON, this);
+        estilo.buttonEstilo(cargarButton, new int[]{375, 470, 70, 40}, StringUI.CARGAR_BUTTON, this);
     }
 
     @Override
@@ -56,11 +70,17 @@ public class Empresarial extends JPanel implements ActionListener {
         try{
             if(actionEvent.getSource() == guardarButton){
                 if(verificarCamposNoVacios())
-                    if(verificarCamposSonCorrectos())
-                        JOptionPane.showMessageDialog(null, "OK");
+                    if(verificarCamposSonCorrectos()){
+                        Conector.getEmpleado().setHorasExtra(Integer.parseInt(horasExtraTextField.getText()));
+                        Conector.getEmpleado().setDepartamento(departamentoTextField.getText());
+                        Conector.getEmpleado().setNumeroEmpleado(Integer.parseInt(numeroEmpleadoTextField.getText()));
+                        Conector.getEmpleado().setSueldo(Double.parseDouble(sueldoTextField.getText()));
+
+                        System.out.println(Conector.getEmpleado().toString());
+                    }
             }
-            else
-                JOptionPane.showMessageDialog(null, "OK");
+            else if(actionEvent.getSource() == nuevoUsuario)
+                vaciarCampos();
         }
         catch (Exception error){
             System.out.println("Error: " + error.getMessage());
@@ -121,5 +141,12 @@ public class Empresarial extends JPanel implements ActionListener {
             return true;
 
         return true;
+    }
+
+    public void vaciarCampos(){
+        numeroEmpleadoTextField.setText("");
+        departamentoTextField.setText("");
+        sueldoTextField.setText("");
+        horasExtraTextField.setText("");
     }
 }

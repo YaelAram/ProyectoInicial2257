@@ -81,4 +81,8 @@ public class Empleado extends Persona {
     public double calcularSueldo(){
         return 30.0 * this.sueldo + (this.horasExtra * 150.0);
     }
+
+    public boolean EmpleadoNoVacio(){
+        return this.departamento != null && this.direccion != null;
+    }
 }
