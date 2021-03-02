@@ -79,8 +79,4 @@ public class Direccion {
                 ", cp='" + cp + '\n' +
                 '}';
     }
-
-    public boolean DireccionNoVacio(){
-        return this.calle != null && this.cp != null && this.colonia != null && this.numero != null && this.delegacion != null && this.estado != null;
-    }
 }

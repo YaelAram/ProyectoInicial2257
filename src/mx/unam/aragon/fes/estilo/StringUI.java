@@ -32,14 +32,14 @@ public class StringUI {
     public static final String NUMERO_RANGO_CORRECTO = "El campo numero debe ser un numero mayor a 0.";
     public static final String CP_LONGITUD_CORRECTA = "El campo C.P. debe tener una longitud de 5.";
 
-    public static final String GUARDAR_BUTTON = "Guardar";
-    public static final String CARGAR_BUTTON = "Cargar";
-    public static final String NUEVO_BUTTON = "Nuevo";
-    public static final String ENVIAR_BUTTON = "Enviar";
+    public static final String GUARDAR_BUTTON = "Guardar Datos";
+    public static final String CARGAR_BUTTON = "Cargar Usuario";
+    public static final String NUEVO_BUTTON = "Nuevo Usuario";
+    public static final String ENVIAR_BUTTON = "Enviar Datos";
+    public static final String ANTERIOR_BUTTON = "<=";
+    public static final String SIGUIENTE_BUTTON = "=>";
 
-    public static final String TAB_REGISTRO_USUARIO = "Personal";
-    public static final String TAB_EMPRESA_DATOS = "Empresa";
-
+    public static final String EMPLEADO_LABEL = "Empresa";
     public static final String NUMERO_EMPLEADO_LABEL = "Numero empleado:";
     public static final String DEPARTAMENTO_LABEL = "Departamento:";
     public static final String SUELDO_LABEL = "Sueldo (MXN):";
@@ -51,4 +51,6 @@ public class StringUI {
     public static final String NUMERO_EMPLEADO_RANGO_CORRECTO = "El numero de empleado no puede ser un numero negativo.";
     public static final String SUELDO_RANGO_CORRECTO = "El sueldo no puede ser un numero negativo.";
     public static final String HORAS_EXTRA_RANGO_CORRECTO = "No se puede trabajar horas negativas";
+
+    public static final String CONFIRMAR_LABEL = "¿Deseas guardar los datos?";
 }

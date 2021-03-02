@@ -69,8 +69,4 @@ public class Persona {
                 ", curp='" + curp + '\n' +
                 '}';
     }
-
-    public boolean PersonaNoVacio(){
-        return this.nombre != null && this.apellidoPaterno != null && this.apellidoMaterno != null && this.curp != null;
-    }
 }

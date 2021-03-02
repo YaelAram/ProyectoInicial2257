@@ -70,19 +70,20 @@ public class Empleado extends Persona {
     @Override
     public String toString() {
         return "Empleado{" +
-                "numeroEmpleado=" + numeroEmpleado +
-                ", departamento='" + departamento + '\'' +
-                ", sueldo=" + sueldo + '\'' +
-                ", horasExtra=" + horasExtra + '\'' +
+                "nombre=" + getNombre() +  '\n' +
+                "paterno=" + getApellidoPaterno() +  '\n' +
+                "materno=" + getApellidoMaterno() +  '\n' +
+                "edad=" + getEdad() +  '\n' +
+                "curp=" + getCurp() +  '\n' +
+                "numeroEmpleado=" + numeroEmpleado + '\n' +
+                ", departamento='" + departamento + '\n' +
+                ", sueldo=" + sueldo + '\n' +
+                ", horasExtra=" + horasExtra + '\n' +
                 ", direccion=" + direccion.toString() +
                 '}';
     }
 
     public double calcularSueldo(){
         return 30.0 * this.sueldo + (this.horasExtra * 150.0);
-    }
-
-    public boolean EmpleadoNoVacio(){
-        return this.departamento != null && this.direccion != null;
     }
 }
